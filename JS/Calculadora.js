@@ -2,12 +2,24 @@ const txt1 = document.getElementById('caja1');
 const txt2 = document.getElementById('caja2');
 const operacion = document.getElementById('operacion');
 const btn = document.getElementById('button');
+const btn2 = document.getElementById('button2');
 const p = document.querySelector('p');
+
+
 
 btn.addEventListener('click', () => {
     const valor1 = caja1.value;
     const valor2 = caja2.value;
     const op = operacion.value;
+
+
+    btn2.addEventListener('click', () => {
+        txt1.value = '';
+        txt2.value = '';
+        operacion.value = '';
+        p.textContent = 0;
+    });
+
 
     if (valor1 === '' || valor2 === '') {
         p.textContent = 'Por favor, ingresa ambos números';
@@ -40,10 +52,8 @@ btn.addEventListener('click', () => {
             }
             resultado = num1 / num2;
             break;
-        default:
-            resultado = 'Operación no válida';
     }
-    p.textContent = resultado;
+    p.textContent = resultado;
 });
 
 
